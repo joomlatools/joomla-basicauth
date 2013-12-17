@@ -3,11 +3,11 @@
     <name>System - Basic HTTP authentication</name>
     <author>Joomlatools</author>
     <creationDate>December 2013</creationDate>
-    <copyright>Copyright (C) 2011 - 2013 Timble CVBA (http://www.timble.net)</copyright>
+    <copyright>Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)</copyright>
     <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
     <authorEmail>support@joomlatools.com</authorEmail>
     <authorUrl>www.joomlatools.com</authorUrl>
-    <version>1.0.5</version>
+    <version>1.0.0</version>
     <description></description>
 
     <files folder="plugins/system">
