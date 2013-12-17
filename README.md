@@ -9,7 +9,7 @@ Create a `composer.json` file in the root directory of your Joomla installation 
 ```json
 	{    
     	"require": {
-    		"joomlatools/basicauth": "0.1.0"
+    		"joomlatools/basicauth": "*"
     	}
 	}
 ```
