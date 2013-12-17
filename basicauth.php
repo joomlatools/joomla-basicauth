@@ -1,19 +1,20 @@
 <?php
 /**
- * Basic HTTP authentication for Joomla - https://github.com/joomlatools/joomla-basicauth-plugin
+ * Basic HTTP authentication for Joomla - https://github.com/joomlatools/joomla-plg_basicauth
  *
  * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		https://github.com/joomlatools/joomla-basicauth-plugin for the canonical source repository
+ * @link		https://github.com/joomlatools/joomla-plg_basicauth for the canonical source repository
  */
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 /**
- * Composer installer class
+ * Basic HTTP auth plugin
  *
- * @author  Steven Rombauts <https://github.com/stevenrombauts>
- * @package Joomlatools\Composer
+ * @author      Steven Rombauts <https://github.com/stevenrombauts>
+ * @package     Joomla.Plugin
+ * @subpackage  System.basicauth
  */
 class plgSystemBasicAuth extends JPlugin
 {
