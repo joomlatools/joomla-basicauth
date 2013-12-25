@@ -8,9 +8,17 @@
     <authorEmail>support@joomlatools.com</authorEmail>
     <authorUrl>www.joomlatools.com</authorUrl>
     <version>1.0.0</version>
-    <description></description>
+    <description>This Joomla plugin allows users to login using basic HTTP authentication.</description>
 
     <files folder="plugins/system">
         <filename plugin="basicauth">basicauth.php</filename>
     </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="access" type="accesslevel" label="Access Level" description="JFIELD_ACCESS_DESC" />
+            </fieldset>
+        </fields>
+    </config>
 </extension>

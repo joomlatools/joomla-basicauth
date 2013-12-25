@@ -71,8 +71,8 @@ class plgSystemBasicAuth extends JPlugin
             return;
         }
 
-        // Check for authorization if the active menu item is a non-public one
-        if($active->access == 2 || $active->access == 3)
+        // Check for authorization if the active menu item has the right access level
+        if($active->access == $this->params->get('access'))
         {
             $username = $app->input->server->get('PHP_AUTH_USER', null, 'string');
             $password = $app->input->server->get('PHP_AUTH_PW', null, 'string');
