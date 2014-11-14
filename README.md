@@ -4,12 +4,12 @@ This Joomla plugin allows users to login using basic HTTP authentication.
 
 ## Installation
 
-Create a `composer.json` file in the root directory of your Joomla installation and simply require the `joomlatools/plg_basicauth` plugin :
+Create a `composer.json` file in the root directory of your Joomla installation and simply require the `basicauth-extension` plugin :
 
 ```json
 	{    
     	"require": {
-    		"joomlatools/plg_basicauth": "*"
+    		"nooku/basicauth-extension": "*"
     	}
 	}
 ```
@@ -33,9 +33,9 @@ Fork the project, create a feature branch, and send us a pull request.
 
 ## Authors
 
-See the list of [contributors](https://github.com/joomlatools/joomla-plg_basicauth/contributors).
+See the list of [contributors](https://github.com/nooku/basicauth-extension/contributors).
 
 ## License
 
-The `joomlatools/plg_basicauth` plugin is licensed under the GPL v3 license - see the LICENSE file for details.
+The `basicauth-extension` plugin is licensed under the GPL v3 license - see the LICENSE file for details.
 
