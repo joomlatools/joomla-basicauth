@@ -43,7 +43,7 @@ class plgSystemBasicAuth extends JPlugin
             if(count($parts) == 2)
             {
                 $input->server->set('PHP_AUTH_USER', $parts[0]);
-                $input->server->set('PHP_AUTH_PW', $parts[0]);
+                $input->server->set('PHP_AUTH_PW', $parts[1]);
             }
         }
 
@@ -57,56 +57,37 @@ class plgSystemBasicAuth extends JPlugin
      */
     public function onAfterRoute()
     {
-        $user = JFactory::getUser();
+        $app = JFactory::getApplication();
 
-        if(!$user->get('guest')) {
-            return;
-        }
+        $username = $app->input->server->get('PHP_AUTH_USER', null, 'string');
+        $password = $app->input->server->get('PHP_AUTH_PW', null, 'string');
 
-        $app    = JFactory::getApplication();
-        $menu   = $app->getMenu();
-        $active = $menu->getActive();
-
-        if(!is_object($active) || !$active->id) {
-            return;
-        }
-
-        // Check for authorization if the active menu item has the right access level
-        if($active->access == $this->params->get('access'))
+        if ($username && $password)
         {
-            $username = $app->input->server->get('PHP_AUTH_USER', null, 'string');
-            $password = $app->input->server->get('PHP_AUTH_PW', null, 'string');
-
-            // If no credentials are passed, respond with the authentication headers
-            if(empty($username) || empty($password)) {
-                $this->_requestAuthentication();
-            }
-
-            $credentials = array(
-                'username' => $username,
-                'password' => $password
-            );
-
-            // If we did receive the user credentials from the user, try to login
-            if(JFactory::getApplication()->login($credentials) !== true)
-            {
-                throw new KException('Login failed', KHttpResponse::UNAUTHORIZED);
-                return false;
+            if (!$this->_login($username, $password, $app)) {
+                throw new Exception('Login failed', 401);
             }
         }
     }
 
     /**
-     * Push the authenticate headers back to user and ask for authorization.
+     * Logs in a given user to an application.
+     *
+     * @param string $username    The username.
+     * @param string $password    The password.
+     * @param object $application The application.
+     *
+     * @return bool True if login was successful, false otherwise.
      */
-    protected function _requestAuthentication()
+    protected function _login($username, $password, $application)
     {
-        $realm = JFactory::getConfig()->get('sitename');
+        $result = true;
 
-        header('WWW-Authenticate: Basic realm="'.$realm.'"');
-        header('HTTP/1.0 401 Unauthorized');
+        // If we did receive the user credentials from the user, try to login
+        if($application->login(array('username' => $username, 'password' => $password)) !== true) {
+            $result = false;
+        }
 
-        echo "Unauthorized";
-        exit;
+        return $result;
     }
 }
