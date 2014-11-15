@@ -1,6 +1,6 @@
 {
     "name": "nooku/plg_basicauth",
-    "type": "joomlatools-installer",
+    "type": "joomla-extension",
     "license": "GPLv3",
     "description": "A Joomla! plugin to allow users to login using basic HTTP authentication",
     "keywords": [
