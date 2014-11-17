@@ -12,5 +12,12 @@
 
     <files folder="plugins/system">
         <filename plugin="basicauth">basicauth.php</filename>
+        <filename>install.sql</filename>
     </files>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">install.sql</file>
+        </sql>
+    </install>
 </extension>
