@@ -81,11 +81,9 @@ class plgSystemBasicAuth extends JPlugin
      */
     protected function _login($username, $password, $application)
     {
-        $result = true;
-
         // If we did receive the user credentials from the user, try to login
         if($application->login(array('username' => $username, 'password' => $password)) !== true) {
-            $result = false;
+            return false;
         }
 
         // If we have logged in succesfully, make sure to fullfil
@@ -100,6 +98,6 @@ class plgSystemBasicAuth extends JPlugin
             $request->getHeaders()->add(array('X-Xsrf-Token' => $user->getSession()->getToken()));
         }
 
-        return $result;
+        return true;
     }
 }
