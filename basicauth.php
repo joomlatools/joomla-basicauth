@@ -91,11 +91,14 @@ class plgSystemBasicAuth extends JPlugin
         if (class_exists('Koowa'))
         {
             $manager = KObjectManager::getInstance();
+
             $request = $manager->getInstance()->getObject('com:koowa.dispatcher.request');
             $user    = $manager->getInstance()->getObject('user');
+            $token   = $user->getSession()->getToken();
 
             $request->setReferrer(JUri::root());
-            $request->getHeaders()->add(array('X-Xsrf-Token' => $user->getSession()->getToken()));
+            $request->getHeaders()->add(array('X-Xsrf-Token' => $token));
+            $request->getCookies()->add(array('csrf_token' => $token));
         }
 
         return true;
