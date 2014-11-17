@@ -88,6 +88,18 @@ class plgSystemBasicAuth extends JPlugin
             $result = false;
         }
 
+        // If we have logged in succesfully, make sure to fullfil
+        // Koowa's CSRF authenticator checks if the framework is loaded.
+        if (class_exists('Koowa'))
+        {
+            $manager = KObjectManager::getInstance();
+            $request = $manager->getInstance()->getObject('com:koowa.dispatcher.request');
+            $user    = $manager->getInstance()->getObject('user');
+
+            $request->setReferrer(JUri::root());
+            $request->getHeaders()->add(array('X-Xsrf-Token' => $user->getSession()->getToken()));
+        }
+
         return $result;
     }
 }
