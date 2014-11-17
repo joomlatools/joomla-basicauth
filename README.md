@@ -4,17 +4,11 @@ This Joomla plugin allows users to login using basic HTTP authentication.
 
 ## Installation
 
-Create a `composer.json` file in the root directory of your Joomla installation and simply require the `basicauth-extension` plugin :
+Go to the root directory of your Joomla installation in command line and execute this command:
 
-```json
-	{    
-    	"require": {
-    		"nooku/basicauth-extension": "*"
-    	}
-	}
 ```
-	
-Install by executing `composer install`. 
+composer require nooku/joomla-basicauth:*
+```
 
 ## Usage
 
