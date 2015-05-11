@@ -18,6 +18,6 @@
         }
     ],
     "require": {
-        "nooku/installer": "*"
+        "nooku/installer": "~1.0"
     }
 }
