@@ -1,10 +1,10 @@
 <?php
 /**
- * Basic HTTP authentication for Joomla - https://github.com/joomlatools/joomla-plg_basicauth
+ * Basic HTTP authentication for Joomla - https://github.com/joomlatools/joomla-basicauth
  *
  * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		https://github.com/joomlatools/joomla-plg_basicauth for the canonical source repository
+ * @link		https://github.com/joomlatools/joomla-basicauth for the canonical source repository
  */
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
