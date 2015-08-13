@@ -18,6 +18,6 @@
         }
     ],
     "require": {
-        "nooku/installer": "~1.0"
+        "joomlatools/joomlatools-framework": "~3.0"
     }
 }

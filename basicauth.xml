@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="system" method="upgrade" overwrite="true">
     <name>System - Basic HTTP authentication</name>
-    <creationDate>December 2013</creationDate>
-    <copyright>Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)</copyright>
+    <creationDate>August 2015</creationDate>
+    <copyright>Copyright (C) 2015 Johan Janssens and Timble CVBA. (http://www.timble.net)</copyright>
     <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
     <author>Joomlatools</author>
     <authorEmail>support@joomlatools.com</authorEmail>
     <authorUrl>www.joomlatools.com</authorUrl>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <description>This Joomla plugin allows users to login using basic HTTP authentication.</description>
 
     <files folder="plugins/system">
