@@ -23,13 +23,22 @@ Any menu item with access level set to _Registered_ or _Special_ will now prompt
 
 ## Contributing
 
-Fork the project, create a feature branch, and send us a pull request.
+The `joomlatools/joomla-basicauth` plugin is an open source, community-driven project. Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
 
-## Authors
+## Contributors
 
-See the list of [contributors](https://github.com/nooku/basicauth-extension/contributors).
+See the list of [contributors](https://github.com/joomlatools/joomla-basicauth/contributors).
 
-## License
+## License 
 
-The `basicauth-extension` plugin is licensed under the GPL v3 license - see the LICENSE file for details.
+The `joomlatools/joomla-basicauth` plugin is free and open-source software licensed under the [GPLv3 license](LICENSE.txt).
+
+## Community
+
+Keep track of development and community news.
+
+* Follow [@joomlatoolsdev on Twitter](https://twitter.com/joomlatoolsdev)
+* Join [joomlatools/dev on Gitter](http://gitter.im/joomlatools/dev)
+* Read and subscribe to the [Joomlatools Developer Blog](https://develeoper.joomlatools.com/blog/)
+* Subscribe to the [Joomlatools Newsletter](http://www.joomlatools.com/newsletter)
 
