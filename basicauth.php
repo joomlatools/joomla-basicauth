@@ -2,7 +2,7 @@
 /**
  * Basic HTTP authentication for Joomla - https://github.com/joomlatools/joomla-basicauth
  *
- * @copyright	Copyright (C) 2015 Johan Janssens and Timble CVBA. (http://www.timble.net)
+ * @copyright	Copyright (C) 2015 - 2017 Johan Janssens and Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link		https://github.com/joomlatools/joomla-basicauth for the canonical source repository
  */
@@ -30,7 +30,8 @@ class plgSystemBasicAuth extends JPlugin
             $basic   = $manager->getObject('com:koowa.dispatcher.authenticator.basic');
 
             if ($basic->getUsername()) {
-                $basic->authenticateRequest($manager->getObject('com:koowa.dispatcher')->getContext());
+                $dispatcher = KObjectManager::getInstance()->getObject('com:koowa.dispatcher.http');
+                $basic->authenticateRequest($dispatcher->getContext());
             }
         }
     }
