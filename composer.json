@@ -1,7 +1,7 @@
 {
     "name": "joomlatools/joomla-basicauth",
     "type": "joomla-extension",
-    "license": "GPLv3",
+    "license": "GPL-3.0-only",
     "description": "A Joomla! plugin to allow users to login using basic HTTP authentication",
     "keywords": [
         "joomla",
