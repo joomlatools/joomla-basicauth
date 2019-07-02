@@ -96,7 +96,11 @@ class plgSystemBasicAuth extends JPlugin
             $user    = $manager->getInstance()->getObject('user');
             $token   = $user->getSession()->getToken();
 
-            $request->setReferrer(JUri::root());
+
+            // Explicitly authenticate user
+            $user->setAuthentic();
+
+            //$request->setReferrer(JUri::root());
             $request->getHeaders()->add(array('X-Xsrf-Token' => $token));
             $request->getCookies()->add(array('csrf_token' => $token));
         }
