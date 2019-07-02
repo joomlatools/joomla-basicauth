@@ -81,30 +81,18 @@ class plgSystemBasicAuth extends JPlugin
      */
     protected function _login($username, $password, $application)
     {
+        $result = false;
+
         // If we did receive the user credentials from the user, try to login
-        if($application->login(array('username' => $username, 'password' => $password)) !== true) {
-            return false;
-        }
-
-        // If we have logged in succesfully, make sure to fullfil
-        // Koowa's CSRF authenticator checks if the framework is loaded.
-        if (class_exists('Koowa'))
+        if($application->login(array('username' => $username, 'password' => $password)) === true)
         {
-            $manager = KObjectManager::getInstance();
+            if (class_exists('Koowa')) {
+                KObjectManager::getInstance()->getObject('user')->setAuthentic(); // Explicitly authenticate user
+            }
 
-            $request = $manager->getInstance()->getObject('com:koowa.dispatcher.request');
-            $user    = $manager->getInstance()->getObject('user');
-            $token   = $user->getSession()->getToken();
-
-
-            // Explicitly authenticate user
-            $user->setAuthentic();
-
-            //$request->setReferrer(JUri::root());
-            $request->getHeaders()->add(array('X-Xsrf-Token' => $token));
-            $request->getCookies()->add(array('csrf_token' => $token));
+            $result = true;
         }
 
-        return true;
+        return $result;
     }
 }
